@@ -1,0 +1,30 @@
+<% if !user_signed_in? %>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container">
+
+        <div class="columns ">
+          <div class="column is-7">
+            <h1 class="title is-size-1">
+              Free online project management
+            </h1>
+            <p class="subtitle">
+              ProjectApp is a free online project management solution with unlimited projects,
+               tasks and subtasks. It comes with time tracking, task automation workflows, 
+               Gantt chart, document management and task collaboration tools, such as group 
+               chat and video conferencing. Bitrix24 is totally free for up to 12 users and 
+               unlimited users are available for $99/mo. Importantly, there is a self-hosted 
+               option available, that lets you deploy Bitrix24 on premise. It comes with open 
+               source code. Also, you can migrate from cloud to your own server any time you want.
+            </p>
+            <%= link_to "Sign up", new_user_registration_path , class: "button is-link" %>
+          </div>
+          <div class="columns is-5">
+              <%= image_tag("project_management.jpg", :alt => "project_management feed") %>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+<% end %>
