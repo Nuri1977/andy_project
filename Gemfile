@@ -50,7 +50,26 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # Provides a better error page for Rails and other Rack apps
+  gem 'better_errors', '~> 2.6'
+  gem 'binding_of_caller', '~> 0.8.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+
+# my gems
+
+gem 'hirb', '~> 0.7.3'
+gem 'bulma-rails', '~> 0.8.0'
+gem 'simple_form', '~> 5.0', '>= 5.0.2'
+gem 'gravatar_image_tag', '~> 1.2'
+gem 'devise', '~> 4.7', '>= 4.7.1'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
+
+gem 'carrierwave', '~> 2.1'
+gem 'mini_magick', '~> 4.10', '>= 4.10.1'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
+gem 'wysiwyg-rails', '~> 3.1'
+gem 'public_activity', '~> 1.5'
