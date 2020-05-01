@@ -1,46 +1,24 @@
-<div class="columns">
-  <div class="column is-half">
-    <h2 class="title is-1">Sign up</h2>
+<div class="columns is-centered">
+  <div class="column is-4">
+    <h2 class="title is-2">Sign up</h2>
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
-
-        <div class="field">
-          <label class="label">
-            <%= f.label :name %>
-          </label>
-          <div class="control">
-            <%= f.text_field :name, class: "input", placeholder: "name" %>
-          </div>
-        </div>
-
-        <div class="field">
-          <label class="label">
-            <%= f.label :email %>
-          </label>
-          <div class="control">
-            <%= f.email_field :email, class: "input", placeholder: "email" %>
-          </div>
-        </div>
-
-        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-        <% end %>
-
+    <div class="field">
         <div class="control">
-          <%= f.label :password %><br />
-          <%= f.password_field :password, autocomplete: "new-password", class: "input", placeholder: "Password" %>
+          <%= f.input :name, required: true, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
         </div>
+      </div>
+      <div class="field">
+        <div class="control">
+        <%= f.input :email, required: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+        </div>
+      </div>
+    <%= f.button :submit, "Sign up", class:"button is-outlined is-medium" %>
 
-        <div class="control">
-          <%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input", placeholder: " Confirm Password"  %>
-        </div>
-        <div class="control">
-          <%= f.submit "Submit", class: "button is-info" %>
-        </div>
     <% end %>
+    <br />
+    <%= render "devise/shared/links" %>
   </div>
 </div>
 
-<%= render "devise/shared/links" %>
