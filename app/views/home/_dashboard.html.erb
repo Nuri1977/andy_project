@@ -4,12 +4,58 @@
       Welcome Nuri Placka
     </h1>
   </div>
-  <div class="column is-4">
-    My Projects 0
+  <div class="column is-4 border-right ph4">
+    <div class="level">
+      <div class="level-left">
+        <h3 class="subtitle is-5">My Projects<span class="tag is-rounded"><%= @projects.count %></span></h3>
+      </div>
+      <div class="level-right">
+        <p class="field">
+          <%= link_to new_project_path, class: 'button is-small' do %>
+            <span class="icon is-small has-text-link"><i class="fa fa-plus"></i></span>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <hr />
+    <% @projects.each do |project| %>
+      <div class="content border-bottom pb4">
+        <p class="title is-4">
+          <%= link_to project.name, project %>
+        </p>
+        <p class="subtitle is-6">
+          <%= link_to project.team.name, project.team %>
+        </p>
+        <p class="f6">Created by: <%= project.user.name %></p>
+      </div>
+    <% end %> 
   </div>
-  <div class="column is-4">
-    My Teams 0
+
+  <div class="column is-4 border-right ph4">
+    <div class="level">
+      <div class="level-left">
+        <h3 class="subtitle is-5">My teams <span class="tag is-rounded"><%= @teams.count %></span></h3>
+      </div>
+      <div class="level-right">
+        <p class="field">
+          <%= link_to new_team_path, class: "button is-small" do %>
+            <span class="icon is-small has-text-link"><i class="fa fa-plus"></i></span>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <hr />
+    <% @teams.each do |team| %>
+      <div class="content border-bottom pb4">
+        <p class="title is-4">
+          <%= link_to team.name, team %>
+        </p>
+        <p class="subtitle is-6"><%= team.user.count %> members</p>
+        <span class="f6"><%= safe_join(team.users.map { |user| user.name}, ', ' ) %> </span>
+      </div>
+    <% end %>
   </div>
+
   <div class="column is-4">
     Activity
   </div>
