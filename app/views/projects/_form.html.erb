@@ -1,14 +1,52 @@
+<% if !current_user.team_id.blank? %>
 
-<%= simple_form_for(@project) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <%= simple_form_for(@project) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :description %>
-  </div>
+    <div class="field">
+      <label class="label">
+        <%= f.label :name %>
+      </label>
+      <div class="control">
+        <%= f.text_field :name, class: "input", placeholder: "Name" %>
+      </div>
+    </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+    <div class="field">
+      <label class="label">
+        <%= f.label :description %>
+      </label>
+      <div class="control">
+        <%= f.text_area :description, class: "textarea", placeholder: "Description", rows: 10 %>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">
+        <%= f.label :team_id %>
+      </label>
+      <div class="control">
+        <%= f.input_field :team_id, collection: @teams, prompt: "Select team" %>
+      </div>
+    </div>
+
+
+
+    <div class="control">
+      <%= f.submit "Create project", class: "button is-info" %>
+    </div>
+  <% end %>
+
+<% else %>
+
+  <article class="message is-warning">
+    <div class="message-body">
+      <strong>It looks as though you are not part of a team yet!</strong>
+      <p>You can create a team or get invited by another user to join.</p>
+      <br />
+      <%= link_to 'Create a team', new_team_path, class:'button' %>
+    </div>
+  </article>
+
 <% end %>

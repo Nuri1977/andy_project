@@ -16,7 +16,7 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   def new
     @project = current_user.projects.build
-    @team = Team.where('id = ?', current_user.team_id)
+    @teams = Team.where('id = ?', current_user.team_id)
   end
 
   # GET /projects/1/edit
