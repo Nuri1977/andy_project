@@ -70,8 +70,8 @@ class TeamsController < ApplicationController
       @team = Team.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def team_params
-      params.require(:team).permit(:name, users_atributes: [:id, :name, :email, :_destroy])
+      params.require(:team).permit(:name, users_attributes: [:id, :name, :email, :_destroy])
     end
+
 end

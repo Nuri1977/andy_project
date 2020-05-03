@@ -26,7 +26,7 @@
         <p class="subtitle is-6">
           <%= link_to project.team.name, project.team %>
         </p>
-        <p class="f6">Created by: <%= project.user.name %></p>
+        <p class="f6">Created by: <%= project.users.name %></p>
       </div>
     <% end %> 
   </div>
@@ -50,7 +50,7 @@
         <p class="title is-4">
           <%= link_to team.name, team %>
         </p>
-        <p class="subtitle is-6"><%= team.user.count %> members</p>
+        <p class="subtitle is-6"><%= team.users.count %> members</p>
         <span class="f6"><%= safe_join(team.users.map { |user| user.name}, ', ' ) %> </span>
       </div>
     <% end %>
