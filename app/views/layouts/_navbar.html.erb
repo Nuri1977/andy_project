@@ -14,23 +14,12 @@
 
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">
-          Explore
+          Teams
         </a>
 
         <div class="navbar-dropdown">
-          <a class="navbar-item">
-            a
-          </a>
-          <a class="navbar-item">
-            b
-          </a>
-          <a class="navbar-item">
-            c
-          </a>
-          <hr class="navbar-divider">
-          <a class="navbar-item">
-            d
-          </a>
+          <%= link_to "View all teams", teams_path, class: "navbar-item"%>
+          <%= link_to "Add new team", new_team_path, class: "navbar-item"%>
         </div>
       </div>
 
