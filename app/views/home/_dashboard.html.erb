@@ -56,7 +56,11 @@
     <% end %>
   </div>
 
-  <div class="column is-4">
-    Activity
+  <div class="column is-4 ph4">
+    <h3 class="subtitle is-5">Activity</h3>
+    <hr />
+    <ul class="list">
+      <%= render_activities(@activities) %>
+    </ul>
   </div>
 </div>  
