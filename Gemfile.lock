@@ -227,7 +227,7 @@ GEM
       railties (>= 4.2)
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
-    websocket-extensions (0.1.4)
+    websocket-extensions (0.1.5)
     wysiwyg-rails (3.1.0)
       railties (>= 3.2, < 7.0)
     xpath (3.2.0)
